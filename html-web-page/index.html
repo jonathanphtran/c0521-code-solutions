@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML Web Page</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    td:not(:first-child) {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- your HTML code here 👇 -->
+  <h1>Jelly of the Month Club</h1>
+  <h2>Make all your friends jelly of your stock of jelly!</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus saepe ex vitae incidunt
+    sed expedita, sequi suscipit, itaque excepturi cum blanditiis eligendi cumque molestiae sapiente omnis.
+    Expedita aperiam vitae odio? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ipsam
+    voluptates modi sed praesentium numquam inventore quidem ab quae. Harum, at. Eveniet optio accusamus maiores
+     voluptates soluta velit accusantium eius!</p>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Basic Plan</th>
+        <th>Deluxe Plan</th>
+        <th>Jelly Giant Plan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Three new curated jellies per month</td>
+        <td><strong>&check;</strong></td>
+        <td><strong>&check;</strong></td>
+        <td><strong>&check;</strong></td>
+      </tr>
+      <tr>
+        <td>Monthly jellies come with commemorative mason jars</td>
+        <td></td>
+        <td><strong>&check;</strong></td>
+        <td><strong>&check;</strong></td>
+      </tr>
+      <tr>
+        <td>Free bonus jar of preserves bi-monthly</td>
+        <td></td>
+        <td><strong>&check;</strong></td>
+        <td><strong>&check;</strong></td>
+      </tr>
+      <tr>
+        <td>Free yearly tickets to Jelly Con</td>
+        <td></td>
+        <td></td>
+        <td><strong>&check;</strong></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Monthly Pricing</td>
+        <td>$30</td>
+        <td>$50</td>
+        <td>$60</td>
+      </tr>
+    </tfoot>
+  </table>
+  <br />
+  <form action="">
+    <div>
+      <div>Like what you see? Become a part of the JOTMC family today!</div>
+      <br />
+      <input type="text" name="name" placeholder="Your Name">
+      <select name="options">
+        <option value="">Select Your Plan</option>
+        <option value="Basic">Basic</option>
+        <option value="Deluxe">Deluxe</option>
+        <option value="Jelly Giant">Jelly Giant</option>
+      </select>
+      <input type="submit" name="submit" value="Submit">
+    </div>
+  </form>
+</body>
+</html>
