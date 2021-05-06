@@ -1,16 +1,19 @@
-.container {
+body {
   background-color: #1996da;
-  color: white;
+}
+
+.container {
   font-family: Lato, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 85%;
+  margin: 5rem auto;
+  text-align: center;
 }
 
 .row {
   display: flex;
-  max-width: 85%;
-  margin: 0 auto;
   align-items: center;
 }
 
@@ -20,13 +23,13 @@
 
 h1,
 h2 {
+  color: white;
   letter-spacing: 0.05em;
 }
 
 .column-one-third {
   width: calc(100% / 3);
   padding: 2rem 1rem;
-  text-align: center;
 }
 
 .image-container {
