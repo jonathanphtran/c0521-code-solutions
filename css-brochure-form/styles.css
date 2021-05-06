@@ -47,10 +47,11 @@ select {
 }
 
 .submit-button {
-  width: 22%;
-  padding: 0.625rem 1rem;
+  width: 20%;
+  padding: 0.35rem 0.9rem;
   border-radius: 1.5625rem;
   border: none;
   background-color: #ec5d57;
   color: white;
+  font-family: "Brandon Grotesque", sans-serif;
 }
