@@ -26,6 +26,11 @@ select {
   margin-top: 0.25rem;
 }
 
+input::placeholder,
+select::placeholder {
+  color: #a3a3a3;
+}
+
 label {
   font-family: "Brandon Grotesque", sans-serif;
   font-weight: bold;
@@ -38,6 +43,8 @@ select {
   background-color: #f3f3f3;
   padding: 0.6rem 0.6rem 0.6rem 0.1rem;
   font-family: "Brandon Grotesque", sans-serif;
+  font-weight: 500;
+  color: #373737;
 }
 
 .subBut {
@@ -54,4 +61,5 @@ select {
   background-color: #ec5d57;
   color: white;
   font-family: "Brandon Grotesque", sans-serif;
+  font-weight: 500;
 }
