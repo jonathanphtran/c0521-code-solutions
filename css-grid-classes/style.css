@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  width: 100%;
+  text-align: left;
+}
+
+.column-one-third {
+  width: calc(100% / 3);
+}
+
+.column-one-forth {
+  width: 25%;
+}
+
+.column-two-thirds {
+  width: calc(100% - calc(100% / 3));
+}
+
+img {
+  width: 100%;
+}
