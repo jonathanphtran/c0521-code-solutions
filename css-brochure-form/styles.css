@@ -4,11 +4,12 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-family: "AtlasGrotesk", sans-serif;
+h2 {
+  font-family: "Brandon Grotesque", sans-serif;
   font-weight: bold;
   font-size: 1rem;
   color: #ec5d57;
+  letter-spacing: 0.1rem;
 }
 
 .inputs {
