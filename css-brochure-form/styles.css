@@ -29,6 +29,8 @@ select {
 input::placeholder,
 select::placeholder {
   color: #a3a3a3;
+  font-family: "AtlasGrotesk", sans-serif;
+  font-weight: 300;
 }
 
 label {
