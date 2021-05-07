@@ -12,14 +12,13 @@
 }
 
 .head {
-  text-align: center;
-  width: 70%;
-  margin: 0 auto;
+  width: 100%;
 }
 
-.title {
-  width: 100%;
+.col-70 {
+  width: 70%;
   text-align: center;
+  margin: 0 auto;
 }
 
 h1 {
@@ -44,13 +43,13 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.group {
+.col-one-half {
   width: 50%;
   display: flex;
   justify-content: center;
 }
 
-.icon {
+.col-one-forth {
   width: 25%;
 }
 
@@ -58,9 +57,13 @@ img {
   width: 100%;
 }
 
-.info {
+.col-65 {
   width: 65%;
   padding-top: 1rem;
+}
+
+.col-full {
+  width: 100%;
 }
 
 button {
