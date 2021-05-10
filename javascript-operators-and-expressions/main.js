@@ -7,7 +7,7 @@ var payment = 60;
 var change = payment - bill;
 
 var quizzes = 90;
-var midterm = 92;
+var midterm = 93;
 var final = 96;
 var grade = (quizzes + midterm + final) / 3;
 
