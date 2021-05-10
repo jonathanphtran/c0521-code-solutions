@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  width: 85%;
+}
+
+.nav-bar {
+  justify-content: space-between;
+}
+
+.white-logo {
+  width: 15%;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bttn {
+  border: 1px solid #294464;
+  background-color: #294464;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.bttn a {
+  color: #bdc5cf;
+}
+
+hr {
+  margin-top: 0;
+  width: 95%;
+}
