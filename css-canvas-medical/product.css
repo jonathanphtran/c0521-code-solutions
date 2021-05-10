@@ -46,3 +46,14 @@ hr {
   margin-top: 0;
   width: 95%;
 }
+
+.main-statement {
+  height: 25rem;
+  background-image: url("images/product/product-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.col-half {
+  width: 50%;
+}
