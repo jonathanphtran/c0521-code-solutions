@@ -1,8 +1,8 @@
-const fullName = 'Jonathan Tran';
-const isCool = false;
-const totalPets = 0;
-const unknown = null;
-let never;
+var fullName = 'Jonathan Tran';
+var isCool = false;
+var totalPets = 0;
+var unknown = null;
+var never;
 
 console.log('value of fullName: ' + fullName);
 console.log('value of isCool: ' + isCool);
