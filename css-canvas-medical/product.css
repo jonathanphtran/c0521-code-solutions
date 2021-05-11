@@ -49,19 +49,34 @@ hr {
 }
 
 .main-statement {
+  position: relative;
+  width: 90%;
+  background: black;
   height: 25rem;
+  color: white;
+}
+
+.main-statement::after {
+  content: '';
+  position: absolute;
+  opacity: 0.8;
   background-image: url("images/product/product-header.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.25);
-  margin: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.main-statement h1,
+.main-statement p {
+  z-index: 2;
 }
 
 .col-half {
   display: flex;
   flex-direction: column;
-  width: 55%;
+  width: 50%;
   justify-content: center;
 }
 
