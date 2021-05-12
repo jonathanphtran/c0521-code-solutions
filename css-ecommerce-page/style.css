@@ -34,6 +34,11 @@ img {
   object-fit: cover;
 }
 
+.line {
+  border-left: 1px solid #d4d4d4;
+  margin-right: 0.2rem;
+}
+
 h6 {
   margin: 1rem 0;
   font-size: 0.7rem;
