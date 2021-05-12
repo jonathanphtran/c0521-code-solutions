@@ -120,18 +120,39 @@ hr {
   background-color: #fafafa;
   margin-top: 2.5rem;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.col-55 {
+.col-50 {
   width: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .features img {
-  margin: 2rem;
+  /* margin: 2rem; */
   width: 100%;
 }
 
-.col-45 {
+.col-40 {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-40 p,
+q,
+figcaption {
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+q {
+  font-style: italic;
+  margin: 1rem;
+}
+
+.features div:nth-of-type(n + 2) {
+  background-color: white;
 }
