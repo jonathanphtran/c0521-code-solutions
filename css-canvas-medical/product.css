@@ -4,6 +4,25 @@
   align-items: center;
 }
 
+p,
+span,
+a,
+button {
+  font-family: "Avenir", sans-serif;
+}
+
+h2 {
+  font-family: "Tiempos Headline", serif;
+  font-weight: 300;
+  color: #6f6f6f;
+}
+
+h3 {
+  font-family: "Avenir", sans-serif;
+  font-weight: 300;
+  color: #a8a8a8;
+}
+
 .row {
   display: flex;
   width: 85%;
@@ -29,6 +48,8 @@ li {
 
 a {
   text-decoration: none;
+  font-size: 0.8rem;
+  color: #a8a8a8;
 }
 
 .bttn {
@@ -92,4 +113,25 @@ hr {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   line-height: 1.5rem;
+}
+
+.features {
+  width: 95%;
+  background-color: #fafafa;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col-55 {
+  width: 50%;
+}
+
+.features img {
+  margin: 2rem;
+  width: 100%;
+}
+
+.col-45 {
+  width: 40%;
 }
