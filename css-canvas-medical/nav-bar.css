@@ -1,0 +1,44 @@
+.nav-bar {
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 3rem;
+  width: 90%;
+}
+
+.blue-logo {
+  margin: 1rem;
+  width: 50%;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem 1rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: #a8a8a8;
+}
+
+.bttn {
+  border: 1px solid #294464;
+  background-color: #294464;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.bttn a {
+  color: #bdc5cf;
+}
+
+hr {
+  margin: 0 1rem;
+  border: 1px solid #ebecef;
+  width: 95%;
+}

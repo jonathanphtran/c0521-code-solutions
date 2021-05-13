@@ -25,56 +25,17 @@ h3 {
 
 .row {
   display: flex;
-  width: 85%;
-}
-
-.nav-bar {
-  justify-content: space-between;
-}
-
-.white-logo {
-  width: 15%;
-}
-
-.navList {
-  display: flex;
-  align-items: center;
-}
-
-li {
-  list-style: none;
-  padding: 0.5rem 1rem;
-}
-
-a {
-  text-decoration: none;
-  font-size: 0.8rem;
-  color: #a8a8a8;
-}
-
-.bttn {
-  border: 1px solid #294464;
-  background-color: #294464;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-}
-
-.bttn a {
-  color: #bdc5cf;
-}
-
-hr {
-  margin-top: 0;
-  margin-bottom: 3rem;
-  width: 95%;
+  width: 100%;
 }
 
 .main-statement {
   position: relative;
-  width: 90%;
+  width: 85%;
   background: black;
   height: 25rem;
   color: white;
+  margin-bottom: 2.5rem;
+  margin-top: 3rem;
 }
 
 .main-statement::after {
@@ -115,16 +76,24 @@ hr {
   line-height: 1.5rem;
 }
 
-.features {
-  width: 95%;
-  background-color: #fafafa;
-  margin-top: 2.5rem;
+.feature-container {
   flex-wrap: wrap;
+  justify-content: center;
+  width: 95%;
+}
+
+.features {
+  width: 100%;
+  background-color: #fafafa;
+  padding: 1rem;
   justify-content: space-around;
 }
 
 .col-50 {
   width: 50%;
+}
+
+.image-feature {
   display: flex;
   align-items: center;
 }
@@ -153,6 +122,6 @@ q {
   margin: 1rem;
 }
 
-.features div:nth-of-type(n + 2) {
+.features:nth-of-type(2n) {
   background-color: white;
 }
