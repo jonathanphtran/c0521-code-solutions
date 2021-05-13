@@ -1,10 +1,10 @@
 /* exported filterOutStrings */
 function filterOutStrings(values) {
-  var nums = [];
+  var nonStrings = [];
   for (var i = 0; i < values.length; i++) {
     if (typeof values[i] !== 'string') {
-      nums.push(values[i]);
+      nonStrings.push(values[i]);
     }
   }
-  return nums;
+  return nonStrings;
 }
