@@ -1,9 +1,21 @@
 /* exported getWords */
 function getWords(string) {
   var words = [];
-  for (var i = 0; i < string.length; i++) {
-    if (string[i] !== ' ') {
-      words.push(string[i]);
+
+  var i = 0;
+  while (i < string.length) {
+    if (string[i] === ' ') {
+      var word = '';
+      var j = 0;
+      while (j < i) {
+        word += string[j];
+        j++;
+      }
+      words.push(word);
+      i = i - i;
+      i = word.length;
     }
+    i++;
   }
+  return words;
 }
