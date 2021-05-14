@@ -1,21 +1,68 @@
+
+// var lea = {
+//   name: 'Lea',
+//   occupation: 'Software Developer'
+// }
+
+// function get(object, key) {
+//   console.log(object[key])
+//   console.log(object)
+//   return object[key];
+// };
+
+// var workPlease = get(lea, "occupation")
+
 /* exported getWords */
 function getWords(string) {
   var words = [];
-
+  var currentIdx = 0;
   var i = 0;
+  var j = 0;
+  var firstWord = '';
+  var finalWord = '';
+
+  // debugger;
+
+  if (string === '') {
+    return words;
+  }
+
+  var spaces = [];
+  for (var h = 0; h < string.length; h++) {
+    if (string[h] === ' ') {
+      spaces.push(string[h]);
+    }
+  }
+  if (spaces.length === 0) {
+    for (var z = 0; z < string.length; z++) {
+      firstWord += string[z];
+    }
+    words.push(firstWord);
+    return words;
+  }
+
   while (i < string.length) {
     if (string[i] === ' ') {
       var word = '';
-      var j = 0;
-      while (j < i) {
-        word += string[j];
-        j++;
+      while (currentIdx < i) {
+        if (string[currentIdx] !== ' ') {
+          word += string[currentIdx];
+        }
+        currentIdx++;
       }
       words.push(word);
-      i = i - i;
-      i = word.length;
+      i = currentIdx + 1;
     }
     i++;
   }
+
+  for (j = currentIdx + 1; j < string.length; j++) {
+    finalWord += string[j];
+  }
+  words.push(finalWord);
+
   return words;
 }
+getWords('hi there my name is jon');
+getWords('web development');
+getWords('hello');
