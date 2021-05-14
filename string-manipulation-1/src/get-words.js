@@ -1,17 +1,3 @@
-
-// var lea = {
-//   name: 'Lea',
-//   occupation: 'Software Developer'
-// }
-
-// function get(object, key) {
-//   console.log(object[key])
-//   console.log(object)
-//   return object[key];
-// };
-
-// var workPlease = get(lea, "occupation")
-
 /* exported getWords */
 function getWords(string) {
   var words = [];
@@ -63,6 +49,3 @@ function getWords(string) {
 
   return words;
 }
-getWords('hi there my name is jon');
-getWords('web development');
-getWords('hello');
