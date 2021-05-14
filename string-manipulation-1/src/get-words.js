@@ -4,7 +4,7 @@ function getWords(string) {
   var currentIdx = 0;
   var i = 0;
   var j = 0;
-  var firstWord = '';
+  var oneWord = '';
   var finalWord = '';
 
   // debugger;
@@ -17,13 +17,14 @@ function getWords(string) {
   for (var h = 0; h < string.length; h++) {
     if (string[h] === ' ') {
       spaces.push(string[h]);
+      break;
     }
   }
   if (spaces.length === 0) {
     for (var z = 0; z < string.length; z++) {
-      firstWord += string[z];
+      oneWord += string[z];
     }
-    words.push(firstWord);
+    words.push(oneWord);
     return words;
   }
 
@@ -37,7 +38,6 @@ function getWords(string) {
         currentIdx++;
       }
       words.push(word);
-      i = currentIdx + 1;
     }
     i++;
   }
