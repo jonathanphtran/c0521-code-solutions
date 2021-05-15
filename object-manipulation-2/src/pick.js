@@ -7,6 +7,7 @@
 - create new object container
 - look through each property in the object
 - compare each property the the values in the array
+- if the value is undefined, move on to the next key
 - if they are equal, add the key value pair to the new object
 - give back the new object
 
@@ -15,8 +16,9 @@
 */
 function pick(source, key) {
   var newObj = {};
+  var earlyEnd = key.length;
+
   for (var akey in source) {
-    var earlyEnd = key.length;
     for (var i = 0; i < key.length; i++) {
       if (source[akey] === undefined) {
         break;
