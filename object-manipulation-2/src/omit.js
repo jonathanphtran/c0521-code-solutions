@@ -15,5 +15,17 @@
 
 */
 function omit(source, key) {
-
+  var newObj = {};
+  for (var akey in source) {
+    newObj[akey] = source[akey];
+  }
+  for (var anotherKey in newObj) {
+    for (var i = 0; i < key.length; i++) {
+      if (anotherKey === key[i]) {
+        delete newObj[anotherKey];
+        break;
+      }
+    }
+  }
+  return newObj;
 }
