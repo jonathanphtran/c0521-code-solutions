@@ -14,3 +14,19 @@
 **********************************************************************
 
 */
+
+function defaults(target, source) {
+  var counter = 0;
+  for (var key in source) {
+    for (var innerKey in target) {
+      if (key === innerKey) {
+        counter++;
+      }
+    }
+    if (counter === 0) {
+      target[key] = source[key];
+    }
+    counter = 0;
+  }
+  return target;
+}
