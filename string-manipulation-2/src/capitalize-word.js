@@ -1,32 +1,32 @@
 /* exported capitalizeWord */
 
-// *********************** PSEUDOCODE ***********************
-//
-// Create a container for the final string
-// create a container that holds a lower cased version of the original string
-// if the word is javascript, give back JavaScript
-// get the first letter of the word, capitalize it, then put it in a container
-// remove the rest of the letters from the word and put them in a container
-// combine the first letter with the rest of the words
-// give back the final word
-//
-// **********************************************************
+/*
+
+*************************** PSEUDOCODE ***************************
+
+- lower case all the letters
+- if the word is javascript, give back JavaScript
+- create a container for a new string
+- capitalize the first letter and add it to the string
+- look through the rest of the string
+- add the rest of the characters
+- return the new string
+
+******************************************************************
+
+*/
 
 function capitalizeWord(word) {
-  var finalWord = '';
-  var updatedWord = word.toLowerCase();
+  var loweredString = word.toLowerCase();
 
-  if (updatedWord === 'javascript') {
-    return 'JavaScript';
+  if (loweredString === 'javascript') return 'JavaScript';
+
+  var newString = '';
+  newString = loweredString[0].toUpperCase();
+
+  for (var i = 1; i < loweredString.length; i++) {
+    newString += loweredString[i];
   }
 
-  var firstLetter = updatedWord[0];
-  firstLetter = firstLetter.toUpperCase();
-  var restOfWord = '';
-
-  for (var i = 1; i < word.length; i++) {
-    restOfWord += updatedWord[i];
-  }
-  finalWord = firstLetter + restOfWord;
-  return finalWord;
+  return newString;
 }
