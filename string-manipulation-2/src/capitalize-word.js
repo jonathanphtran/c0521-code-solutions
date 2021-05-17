@@ -22,8 +22,8 @@ function capitalizeWord(word) {
 
   var firstLetter = updatedWord[0];
   firstLetter = firstLetter.toUpperCase();
-
   var restOfWord = '';
+
   for (var i = 1; i < word.length; i++) {
     restOfWord += updatedWord[i];
   }
