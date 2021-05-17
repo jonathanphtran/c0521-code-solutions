@@ -14,8 +14,8 @@
 - if you see a letter that is on the object
   - subtract 1 from the value
 - if there is a new letter, add it as a property and set value to 1
-- if all values in the object = 0, give back true
-- if not, give back false
+- if any value isn't 0, give back false
+- if it is, give back true
 
 **************************************************************************
 
