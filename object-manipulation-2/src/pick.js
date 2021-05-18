@@ -16,21 +16,19 @@
 */
 function pick(source, key) {
   var newObj = {};
-  var earlyEnd = key.length;
 
-  for (var akey in source) {
-    for (var i = 0; i < key.length; i++) {
+  for (var i = 0; i < key.length; i++) {
+    for (var akey in source) {
+      if (!akey) {
+        break;
+      }
       if (source[akey] === undefined) {
         break;
       }
       if (akey === key[i]) {
         newObj[akey] = source[akey];
-        earlyEnd--;
         break;
       }
-    }
-    if (earlyEnd === 0) {
-      break;
     }
   }
   return newObj;

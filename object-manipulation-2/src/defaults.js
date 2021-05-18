@@ -16,17 +16,17 @@
 */
 
 function defaults(target, source) {
-  var counter = 0;
+  var match = false;
   for (var key in source) {
     for (var innerKey in target) {
       if (key === innerKey) {
-        counter++;
+        match = true;
       }
     }
-    if (counter === 0) {
+    if (!match) {
       target[key] = source[key];
     }
-    counter = 0;
+    match = false;
   }
   return target;
 }
