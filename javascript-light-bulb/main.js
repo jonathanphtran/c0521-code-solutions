@@ -19,14 +19,11 @@ var $bulb = document.querySelector('.light');
 var $row = document.querySelector('.rowLight');
 
 function clickBulb(event) {
-  if ($bulb.className === 'light') {
+  if ($bulb.className === 'light' && $row.className === 'rowLight') {
     $bulb.className = 'dark';
-  } else if ($bulb.className === 'dark') {
-    $bulb.className = 'light';
-  }
-  if ($row.className === 'rowLight') {
     $row.className = 'rowDark';
-  } else if ($row.className === 'rowDark') {
+  } else if ($bulb.className === 'dark' && $row.className === 'rowDark') {
+    $bulb.className = 'light';
     $row.className = 'rowLight';
   }
 }
