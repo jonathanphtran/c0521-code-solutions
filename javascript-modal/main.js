@@ -16,15 +16,15 @@
 */
 
 var $blueButton = document.querySelector('.blueButton');
-var $row = document.querySelector('.row');
+var $row = document.querySelector('.rowInvis');
 var $redButton = document.querySelector('.redButton');
 
 function showPopUp(event) {
-  $row.style.display = 'flex';
+  $row.className = 'rowExist';
 }
 $blueButton.addEventListener('click', showPopUp);
 
 function closePopUp(event) {
-  $row.style.display = 'none';
+  $row.className = 'rowInvis';
 }
 $redButton.addEventListener('click', closePopUp);

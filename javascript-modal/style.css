@@ -24,8 +24,14 @@ body {
   z-index: 1;
 }
 
-.row {
-  /* visibility: hidden; */
+.rowExist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.rowInvis {
   display: none;
   justify-content: center;
   align-items: center;
