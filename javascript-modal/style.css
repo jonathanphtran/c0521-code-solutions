@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+.blueButton {
+  position: absolute;
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(90, 66, 226);
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+  border: none;
+  margin: 0.5rem;
+  box-shadow: 0 0.05rem 0.2rem 0.02rem black;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: block;
+  z-index: 1;
+}
+
+.row {
+  /* visibility: hidden; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.redButton {
+  background-color: orangered;
+  color: white;
+  padding: 0.25rem 1.25rem;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 0.05rem 0.2rem 0.02rem black;
+}
+
+h2 {
+  font-family: sans-serif;
+  margin-bottom: 2rem;
+}
+
+.col {
+  position: relative;
+  border: none;
+  padding: 2rem;
+  text-align: center;
+  z-index: 5;
+  background-color: white;
+  border-radius: 0.2rem;
+}
