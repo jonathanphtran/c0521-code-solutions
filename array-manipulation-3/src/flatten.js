@@ -18,7 +18,9 @@
 function flatten(array) {
   var flattenedArray = [];
   for (var i = 0; i < array.length; i++) {
-    i++;
+    if (!Array.isArray(array[i])) {
+      flattenedArray.push(array[i]);
+    }
   }
   return flattenedArray;
 }
