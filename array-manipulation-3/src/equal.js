@@ -4,7 +4,7 @@
 
 ******************************* PSEUDOCODE *******************************
 
-- check to see if length are equal
+- check to see if lengths are equal
   - if not equal, give back false
 - check to see if both arrays are empty
   - if yes, give back true
