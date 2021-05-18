@@ -14,3 +14,11 @@
 **************************************************************************
 
 */
+
+function flatten(array) {
+  var flattenedArray = [];
+  for (var i = 0; i < array.length; i++) {
+    i++;
+  }
+  return flattenedArray;
+}
