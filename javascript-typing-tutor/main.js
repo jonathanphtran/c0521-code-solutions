@@ -45,7 +45,7 @@ function getLetter(event) {
   // console.log(letter);
   // console.log($newEl[i].innerHTML);
 
-  if (letter === $newEl[i].textContent) {
+  if ((letter === $newEl[i].textContent) || (letter === ' ' && $newEl[i].innerHTML === '&nbsp;')) {
     $newEl[i].className = 'green';
     $newEl[i + 1].className = 'currentLetter';
     i++;
@@ -53,11 +53,6 @@ function getLetter(event) {
     $newEl[i].className = 'red';
     $newEl[i].className = 'currentLetter red';
   }
-  if (letter === ' ' && $newEl[i].innerHTML === '&nbsp;') {
-    i++;
-    $newEl[i].className = 'currentLetter';
-  }
-
 }
 
 $HTML.addEventListener('keypress', getLetter);
