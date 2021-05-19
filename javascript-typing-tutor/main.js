@@ -42,6 +42,7 @@ $submit.addEventListener('click', getSentence);
 
 function getLetter(event) {
   var letter = String.fromCharCode(event.keyCode);
+  // console.log($newEl.length);
 
   if ((letter === $newEl[i].textContent) || (letter === ' ' && $newEl[i].innerHTML === '&nbsp;')) {
     $newEl[i].className = 'green';
@@ -51,4 +52,5 @@ function getLetter(event) {
     $newEl[i].className = 'red';
     $newEl[i].className = 'currentLetter red';
   }
+  // console.log(i);
 }
