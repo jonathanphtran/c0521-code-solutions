@@ -15,19 +15,15 @@ var $HTML = document.querySelector('html');
 
 var $newEl = document.querySelectorAll('h1');
 
-var letterContainer = [];
 var i = 0;
 
 function getSentence(event) {
   var words = $words.value;
 
-  for (var i = 0; i < words.length; i++) {
-    letterContainer.push(words[i]);
-  }
-  for (var j = 0; j < letterContainer.length; j++) {
-    if (letterContainer[j] !== ' ') {
+  for (var j = 0; j < words.length; j++) {
+    if (words[j] !== ' ') {
       var newEl = document.createElement('h1');
-      newEl.append(letterContainer[j]);
+      newEl.append(words[j]);
       $middle.append(newEl);
     } else {
       newEl = document.createElement('h1');
@@ -37,6 +33,10 @@ function getSentence(event) {
   }
   $newEl = document.querySelectorAll('h1');
   $newEl[0].className = 'currentLetter';
+
+  $words.value = '';
+
+  $HTML.addEventListener('keypress', getLetter);
 }
 $submit.addEventListener('click', getSentence);
 
@@ -52,5 +52,3 @@ function getLetter(event) {
     $newEl[i].className = 'currentLetter red';
   }
 }
-
-$HTML.addEventListener('keypress', getLetter);
