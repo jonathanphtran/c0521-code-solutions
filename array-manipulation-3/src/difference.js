@@ -5,30 +5,28 @@
 ******************************** PSEUDOCODE ********************************
 
 - create an empty array
-- create an empty object
+- create a variable that holds true
 - loop through the first array
-- add array elements as properties to the object and count how many of each
-- loop through the other array
-- add array elements as properties to the object and count how many of each
-- add properties with a value of 1 to the empty array
-- return the empty array
+- compare each element with each element in the second array
+- if there is a match, change the true value to false
+- if the variable is false, add that element to the empty array
+- give back the variable
 
 ****************************************************************************
 
 */
 
 function difference(first, second) {
-  // var differenceArray = [];
-  var counterObj = {};
+  var differenceArray = [];
+  var match = true;
   for (var i = 0; i < first.length; i++) {
-    counterObj[first[i]] = 1;
-  }
-  for (var j = 0; j < second.length; j++) {
-    if (!counterObj[first[j]]) {
-      counterObj[first[i]] = 1;
-    } else if (counterObj[first[j]]) {
-      counterObj[first[i]] = 2;
+    for (var j = 0; j < second.lenght; j++) {
+      if (first[i] === second[j]) {
+        match = false;
+      }
+    }
+    if (match === false) {
+      differenceArray.push(first[i]);
     }
   }
-  return counterObj;
 }
