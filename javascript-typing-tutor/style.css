@@ -19,3 +19,15 @@ body {
 h1 {
   display: inline-block;
 }
+
+.currentLetter {
+  border-bottom: 2px solid black;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}

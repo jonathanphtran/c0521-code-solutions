@@ -16,10 +16,10 @@ var $HTML = document.querySelector('html');
 var $newEl = document.querySelectorAll('h1');
 
 var letterContainer = [];
+var i = 0;
 
 function getSentence(event) {
   var words = $words.value;
-  // console.log(words);
 
   for (var i = 0; i < words.length; i++) {
     letterContainer.push(words[i]);
@@ -33,25 +33,24 @@ function getSentence(event) {
       var newSpace = document.createTextNode(' ');
       $middle.append(newSpace);
     }
-
   }
   $newEl = document.querySelectorAll('h1');
-  // console.log($newEl);
+  $newEl[0].className = 'currentLetter';
 }
-
 $submit.addEventListener('click', getSentence);
 
 function getLetter(event) {
   var letter = String.fromCharCode(event.keyCode);
-  // console.log(letter);
 
-  for (var i = 0; i < $newEl.length; i++) {
-    if (letter === $newEl[i].textContent) {
-      $newEl[i].style.color = 'green';
-    } else if (letter !== $newEl[i].textContent) {
-      $newEl[i].style.color = 'red';
-    }
+  if (letter === $newEl[i].textContent) {
+    $newEl[i].className = 'green';
+    $newEl[i + 1].className = 'currentLetter';
+    i++;
+  } else if (letter !== $newEl[i].textContent) {
+    $newEl[i].className = 'red';
+    $newEl[i].className = 'currentLetter red';
   }
+
 }
 
 $HTML.addEventListener('keypress', getLetter);
