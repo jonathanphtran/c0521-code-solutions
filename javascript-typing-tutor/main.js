@@ -30,8 +30,9 @@ function getSentence(event) {
       newEl.append(letterContainer[j]);
       $middle.append(newEl);
     } else {
-      var newSpace = document.createTextNode(' ');
-      $middle.append(newSpace);
+      newEl = document.createElement('h1');
+      newEl.innerHTML = '&nbsp';
+      $middle.append(newEl);
     }
   }
   $newEl = document.querySelectorAll('h1');
@@ -41,6 +42,8 @@ $submit.addEventListener('click', getSentence);
 
 function getLetter(event) {
   var letter = String.fromCharCode(event.keyCode);
+  // console.log(letter);
+  // console.log($newEl[i].innerHTML);
 
   if (letter === $newEl[i].textContent) {
     $newEl[i].className = 'green';
@@ -49,6 +52,10 @@ function getLetter(event) {
   } else if (letter !== $newEl[i].textContent) {
     $newEl[i].className = 'red';
     $newEl[i].className = 'currentLetter red';
+  }
+  if (letter === ' ' && $newEl[i].innerHTML === '&nbsp;') {
+    i++;
+    $newEl[i].className = 'currentLetter';
   }
 
 }
