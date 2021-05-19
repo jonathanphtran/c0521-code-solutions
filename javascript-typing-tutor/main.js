@@ -1,23 +1,13 @@
-/*
-
-***************************** PSEUDOCODE *****************************
-
-- get the h1 element
-
-**********************************************************************
-
-*/
-
 var $words = document.querySelector('#sentence');
 var $submit = document.querySelector('.submit');
 var $middle = document.querySelector('.middle');
 var $HTML = document.querySelector('html');
-
 var $newEl = document.querySelectorAll('h1');
 
 var i = 0;
 
 function getSentence(event) {
+  event.preventDefault();
   var words = $words.value;
 
   for (var j = 0; j < words.length; j++) {
@@ -32,25 +22,27 @@ function getSentence(event) {
     }
   }
   $newEl = document.querySelectorAll('h1');
-  $newEl[0].className = 'currentLetter';
 
   $words.value = '';
 
   $HTML.addEventListener('keypress', getLetter);
 }
-$submit.addEventListener('click', getSentence);
+$submit.addEventListener('mousedown', getSentence);
 
 function getLetter(event) {
+  event.preventDefault();
   var letter = String.fromCharCode(event.keyCode);
-  // console.log($newEl.length);
 
+  if (i === $newEl.length - 1) {
+    $newEl[i].className = 'green';
+    return 'FINISHED';
+  }
   if ((letter === $newEl[i].textContent) || (letter === ' ' && $newEl[i].innerHTML === '&nbsp;')) {
     $newEl[i].className = 'green';
     $newEl[i + 1].className = 'currentLetter';
     i++;
   } else if (letter !== $newEl[i].textContent) {
     $newEl[i].className = 'red';
-    $newEl[i].className = 'currentLetter red';
+    $newEl[i].className = 'wrongLetter red';
   }
-  // console.log(i);
 }

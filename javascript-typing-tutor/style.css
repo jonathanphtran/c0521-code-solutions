@@ -31,3 +31,7 @@ h1 {
 .red {
   color: red;
 }
+
+.wrongLetter {
+  border-bottom: 2px solid red;
+}
