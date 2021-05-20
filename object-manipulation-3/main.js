@@ -25,7 +25,24 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
   - assign it to the hands array in the players object
   - push the given card to the used card array
   - remove the given card from the deck
+- once the loop finishes, push the removed cards back into the deck
+  - create a score variable and assign it to be 0
+  - create a max variable and assign it to 0
+  - loop through the number of players
+  - loop through each card
+   - if the card is a face card, increase the score by 10
+   - if the card is an ace, increase score by 11
+   - if score is a number card, increase score by the number
+  - assign the score to the player
+  - if the score is higher than the current, change the max to be the score
+  - check which player does the max score match with
+  - give back the player name
 
 ********************************************************************************
 
 */
+
+// var player1 = { name, hand: [] };
+// var player2 = { name, hand: [] };
+// var player3 = { name, hand: [] };
+// var player4 = { name, hand: [] };
