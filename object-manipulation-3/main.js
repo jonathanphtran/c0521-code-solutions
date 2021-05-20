@@ -42,30 +42,48 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
 */
 
-// var player1 = { name: 'Jon', hand: [] };
-// var player2 = { name: 'Jane', hand: [] };
-// var player3 = { name: 'Jacob', hand: [] };
-// var player4 = { name: 'Jenny', hand: [] };
-// var cardDeck = [];
-// var card = [];
-// var suits = ['club', 'clover', 'diamond', 'heart'];
-// var cards = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+var players = [
+  { name: 'Jon', hand: [] },
+  { name: 'Jane', hand: [] },
+  { name: 'Jacob', hand: [] },
+  { name: 'Jenny', hand: [] }
+];
+var cardDeck = [];
+var card = [];
+var suits = ['club', 'clover', 'diamond', 'heart'];
+var cards = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+// var removedCards = [];
 
-// for (var i = 0; i < suits.length; i++) {
-//   for (var j = 0; j < cards.length; j++) {
-//     card.push(suits[i]);
-//     console.log(i, suits[i]);
+for (var i = 0; i < suits.length; i++) {
+  for (var j = 0; j < cards.length; j++) {
+    card.push(suits[i]);
+    // console.log(i, suits[i]);
 
-//     card.push(cards[j]);
-//     console.log(j, cards[j]);
+    card.push(cards[j]);
+    // console.log(j, cards[j]);
 
-//     console.log('card', card);
+    // console.log('card', card);
 
-//     cardDeck.push(card);
-//     console.log(' ');
+    cardDeck.push(card);
+    // console.log(' ');
 
-//     card = [];
-//   }
-// }
+    card = [];
+  }
+}
 
 // console.log(cardDeck);
+
+// function randomNumber() {
+//   var num = Math.random();
+//   num = num * 52;
+//   num = Math.floor(num);
+//   num--;
+//   console.log(num);
+// }
+
+for (var k = 0; k < players.length; k++) {
+  for (var z = 0; z < 2; z++) {
+    // players[k].hand = players[k].hand.push(card[randomNumber()]);
+    console.log(players[k].name);
+  }
+}
