@@ -26,17 +26,11 @@ function difference(first, second) {
     secondCopy.push(second[k]);
   }
 
-  for (var i = 0; i < first.length; i++) {
-    for (var z = 0; z < second.length; z++) {
-
-      if (first[i] === second[z]) {
-        // console.log('first[i]', first[i]);
-        // console.log('second[z]', second[z]);
-        // console.log('*****************************');
-
+  for (var i = 0; i < firstCopy.length; i++) {
+    for (var z = 0; z < secondCopy.length; z++) {
+      if (firstCopy[i] === secondCopy[z]) {
         firstCopy.splice(i, 1);
         secondCopy.splice(z, 1);
-
       }
     }
   }
