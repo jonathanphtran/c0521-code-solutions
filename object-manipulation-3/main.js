@@ -66,6 +66,7 @@ for (var i = 0; i < suits.length; i++) {
   }
 }
 
+// use the shuffle method on lodash
 for (var k = 0; k < players.length; k++) {
   var temp = -1;
   for (var z = 0; z < 2; z++) {
@@ -81,6 +82,7 @@ for (var k = 0; k < players.length; k++) {
   }
 }
 
+// I think i can change this to a single loop
 for (var t = 0; t < players.length; t++) {
   for (var a = 0; a < players[t].hand.length; a++) {
     if (players[t].hand[a][1] === 'Ace') {
