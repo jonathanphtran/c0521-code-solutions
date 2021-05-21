@@ -4,29 +4,43 @@
 
 ******************************** PSEUDOCODE ********************************
 
-- create an empty array
-- create a variable that holds true
-- loop through the first array
-- compare each element with each element in the second array
-- if there is a match, change the true value to false
-- if the variable is false, add that element to the empty array
-- give back the variable
+- create two empty arrays
+- make copies of the array
+- compare the two arrays
+  - if there is a match, remove it
+- concat the 2 arrays
 
 ****************************************************************************
 
 */
 
 function difference(first, second) {
+  var firstCopy = [];
+  var secondCopy = [];
   var differenceArray = [];
-  var match = true;
+
+  for (var j = 0; j < first.length; j++) {
+    firstCopy.push(first[j]);
+  }
+  for (var k = 0; k < second.length; k++) {
+    secondCopy.push(second[k]);
+  }
+
   for (var i = 0; i < first.length; i++) {
-    for (var j = 0; j < second.lenght; j++) {
-      if (first[i] === second[j]) {
-        match = false;
+    for (var z = 0; z < second.length; z++) {
+
+      if (first[i] === second[z]) {
+        // console.log('first[i]', first[i]);
+        // console.log('second[z]', second[z]);
+        // console.log('*****************************');
+
+        firstCopy.splice(i, 1);
+        secondCopy.splice(z, 1);
+
       }
     }
-    if (match === false) {
-      differenceArray.push(first[i]);
-    }
   }
+
+  differenceArray = firstCopy.concat(secondCopy);
+  return differenceArray;
 }
