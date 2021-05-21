@@ -43,47 +43,55 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 */
 
 var players = [
-  { name: 'Jon', hand: [] },
-  { name: 'Jane', hand: [] },
-  { name: 'Jacob', hand: [] },
-  { name: 'Jenny', hand: [] }
+  { name: 'Jon', hand: [], score: 0 },
+  { name: 'Jane', hand: [], score: 0 },
+  { name: 'Jacob', hand: [], score: 0 },
+  { name: 'Jenny', hand: [], score: 0 }
 ];
 var cardDeck = [];
 var card = [];
 var suits = ['club', 'clover', 'diamond', 'heart'];
 var cards = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
-// var removedCards = [];
+var removedCards = [];
+var total = 52;
+// var maxScore = 0;
 
 for (var i = 0; i < suits.length; i++) {
   for (var j = 0; j < cards.length; j++) {
     card.push(suits[i]);
-    // console.log(i, suits[i]);
-
     card.push(cards[j]);
-    // console.log(j, cards[j]);
-
-    // console.log('card', card);
-
     cardDeck.push(card);
-    // console.log(' ');
-
     card = [];
   }
 }
 
-// console.log(cardDeck);
-
-// function randomNumber() {
-//   var num = Math.random();
-//   num = num * 52;
-//   num = Math.floor(num);
-//   num--;
-//   console.log(num);
-// }
-
 for (var k = 0; k < players.length; k++) {
+  var temp = -1;
   for (var z = 0; z < 2; z++) {
-    // players[k].hand = players[k].hand.push(card[randomNumber()]);
-    console.log(players[k].name);
+    var randomNum = Math.floor(Math.random() * total) - 1;
+    while (randomNum === temp) {
+      randomNum = Math.floor(Math.random() * total) - 1;
+    }
+    players[k].hand.push(cardDeck[randomNum]);
+    removedCards.push(cardDeck[randomNum]);
+    cardDeck.splice(randomNum, 1);
+    total--;
+    temp = randomNum;
   }
 }
+
+for (var t = 0; t < players.length; t++) {
+  for (var a = 0; a < players[t].hand.length; a++) {
+    if (players[t].hand[a][1] === 'Ace') {
+      players[t].score += 11;
+    } else if (typeof (players[t].hand[a][1]) === 'string') {
+      players[t].score += 10;
+    } else {
+      players[t].score += players[t].hand[a][1];
+    }
+  }
+}
+
+console.log(removedCards);
+console.log(cardDeck);
+console.log(players);
