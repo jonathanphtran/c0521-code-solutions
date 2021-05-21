@@ -12,15 +12,9 @@ function getSentence(event) {
   var newEl = document.createElement('h1');
 
   for (var j = 0; j < words.length; j++) {
-    if (words[j] !== ' ') {
-      var newSpanEl = document.createElement('span');
-      newSpanEl.append(words[j]);
-      newEl.append(newSpanEl);
-    } else {
-      newSpanEl = document.createElement('span');
-      newSpanEl.innerHTML = ' ';
-      newEl.append(newSpanEl);
-    }
+    var newSpanEl = document.createElement('span');
+    newSpanEl.append(words[j]);
+    newEl.append(newSpanEl);
   }
 
   $middle.append(newEl);
