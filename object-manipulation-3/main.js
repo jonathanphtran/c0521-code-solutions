@@ -54,7 +54,8 @@ var suits = ['club', 'clover', 'diamond', 'heart'];
 var cards = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
 var removedCards = [];
 var total = 52;
-// var maxScore = 0;
+var highScore = 0;
+var winner = null;
 
 for (var i = 0; i < suits.length; i++) {
   for (var j = 0; j < cards.length; j++) {
@@ -92,6 +93,13 @@ for (var t = 0; t < players.length; t++) {
   }
 }
 
-console.log(removedCards);
-console.log(cardDeck);
 console.log(players);
+
+for (var y = 0; y < players.length; y++) {
+  console.log(players[y].score);
+  if (players[y].score > highScore) {
+    highScore = players[y].score;
+    winner = players[y].name;
+  }
+}
+console.log(`The winner is ${winner}`);
