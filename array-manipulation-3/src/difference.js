@@ -4,10 +4,10 @@
 
 ******************************** PSEUDOCODE ********************************
 
-- create two empty arrays
+- create three empty arrays
 - make copies of the array
 - compare the two arrays
-  - if there is a match, remove it
+  - if elements match, remove them from both arrays
 - concat the 2 arrays
 
 ****************************************************************************
