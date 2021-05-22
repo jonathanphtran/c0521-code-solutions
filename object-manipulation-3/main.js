@@ -66,23 +66,16 @@ for (var i = 0; i < suits.length; i++) {
   }
 }
 
-// use the shuffle method on lodash
 for (var k = 0; k < players.length; k++) {
-  var temp = -1;
   for (var z = 0; z < 2; z++) {
-    var randomNum = Math.floor(Math.random() * total) - 1;
-    while (randomNum === temp) {
-      randomNum = Math.floor(Math.random() * total) - 1;
-    }
+    var randomNum = Math.floor(Math.random() * total);
     players[k].hand.push(cardDeck[randomNum]);
     removedCards.push(cardDeck[randomNum]);
     cardDeck.splice(randomNum, 1);
     total--;
-    temp = randomNum;
   }
 }
 
-// I think I can change this to a single loop
 for (var t = 0; t < players.length; t++) {
   for (var a = 0; a < players[t].hand.length; a++) {
     if (players[t].hand[a][1] === 'Ace') {
