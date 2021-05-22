@@ -56,6 +56,7 @@ var removedCards = [];
 var total = 52;
 var highScore = 0;
 var winner = null;
+var winner2 = null;
 
 for (var i = 0; i < suits.length; i++) {
   for (var j = 0; j < cards.length; j++) {
@@ -95,6 +96,13 @@ for (var y = 0; y < players.length; y++) {
   if (players[y].score > highScore) {
     highScore = players[y].score;
     winner = players[y].name;
+  } else if (players[y].score === highScore) {
+    winner2 = players[y];
   }
 }
-console.log(`The winner is ${winner}`);
+
+if (winner2.score === highScore) {
+  console.log(`It is a tie between ${winner} and ${winner2.name}!`);
+} else {
+  console.log(`The winner is ${winner}`);
+}
