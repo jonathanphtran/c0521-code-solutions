@@ -9,7 +9,10 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
   - name will be a string and hand will be an empty array
 - create an empty array
 - create a counter variable of 0
-- create an array holding the face cards
+- create a variable for total number of cards
+- create an array holding sutis
+- create an array to hold the cards
+- create variable round2 and set it to false
 - using a loop fill it with 52 objects
   - each object will have a rank and suit
   - create another loop going up to 13
@@ -18,8 +21,12 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 - at the end of the first loop, increase the counter and
 - create a random number generator function that goes up to 52
 - create a used card array
-- create a loop that goes up to 4 to represent the players
-- create a loop that goes up to 2 to represent the cards
+- create a loop that goes up to double the length of the players
+  - first half will deal first card to each player
+  - second half will deal second card to each player
+  - once you get pass the first half, round2 variable will be true and
+    - k will be set back to 0
+  - if round2 is true and k is greater than the half way mark, break
   - get a random number
   - grab a card from the card array based on the index and random number
   - assign it to the hands array in the players object
@@ -54,6 +61,7 @@ var suits = ['club', 'clover', 'diamond', 'heart'];
 var cards = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
 var total = 52;
 var highScore = 0;
+var round2 = false;
 
 for (var i = 0; i < suits.length; i++) {
   for (var j = 0; j < cards.length; j++) {
@@ -64,13 +72,16 @@ for (var i = 0; i < suits.length; i++) {
   }
 }
 
-for (var k = 0; k < players.length; k++) {
-  for (var z = 0; z < 2; z++) {
-    var randomNum = Math.floor(Math.random() * total);
-    players[k].hand.push(cardDeck[randomNum]);
-    cardDeck.splice(randomNum, 1);
-    total--;
+for (var k = 0; k < players.length * 2; k++) {
+  if (k > players.length - 1 && round2 === true) break;
+  if (k > players.length - 1) {
+    k = 0;
+    round2 = true;
   }
+  var randomNum = Math.floor(Math.random() * total);
+  players[k].hand.push(cardDeck[randomNum]);
+  cardDeck.splice(randomNum, 1);
+  total--;
 }
 
 for (var t = 0; t < players.length; t++) {
