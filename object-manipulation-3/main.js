@@ -32,6 +32,7 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
   - assign it to the hands array in the players object
   - push the given card to the used card array
   - remove the given card from the deck
+  - set round2 back to false so you can use it again
 - once the loop finishes, push the removed cards back into the deck
   - create a score variable and assign it to be 0
   - create a max variable and assign it to 0
@@ -62,6 +63,7 @@ var cards = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
 var total = 52;
 var highScore = 0;
 var round2 = false;
+var cardIdx = 0;
 
 for (var i = 0; i < suits.length; i++) {
   for (var j = 0; j < cards.length; j++) {
@@ -84,15 +86,21 @@ for (var k = 0; k < players.length * 2; k++) {
   total--;
 }
 
-for (var t = 0; t < players.length; t++) {
-  for (var a = 0; a < players[t].hand.length; a++) {
-    if (players[t].hand[a][1] === 'Ace') {
-      players[t].score += 11;
-    } else if (typeof (players[t].hand[a][1]) === 'string') {
-      players[t].score += 10;
-    } else {
-      players[t].score += players[t].hand[a][1];
-    }
+round2 = false;
+
+for (var t = 0; t < players.length * 2; t++) {
+  if (t > players.length - 1 && round2 === true) break;
+  if (t > players.length - 1) {
+    t = 0;
+    cardIdx = 1;
+    round2 = true;
+  }
+  if (players[t].hand[cardIdx][1] === 'Ace') {
+    players[t].score += 11;
+  } else if (typeof (players[t].hand[cardIdx][1]) === 'string') {
+    players[t].score += 10;
+  } else {
+    players[t].score += players[t].hand[cardIdx][1];
   }
 }
 
