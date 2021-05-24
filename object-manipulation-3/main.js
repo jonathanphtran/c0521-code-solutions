@@ -36,7 +36,7 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
   - assign the score to the player
   - if the score is higher than the current, change the max to be the score
   - check which player does the max score match with
-  - give back the player name
+  - give back the player(s) name(s)
 
 ********************************************************************************
 
@@ -52,11 +52,8 @@ var cardDeck = [];
 var card = [];
 var suits = ['club', 'clover', 'diamond', 'heart'];
 var cards = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
-var removedCards = [];
 var total = 52;
 var highScore = 0;
-var winner = null;
-var winner2 = null;
 
 for (var i = 0; i < suits.length; i++) {
   for (var j = 0; j < cards.length; j++) {
@@ -71,7 +68,6 @@ for (var k = 0; k < players.length; k++) {
   for (var z = 0; z < 2; z++) {
     var randomNum = Math.floor(Math.random() * total);
     players[k].hand.push(cardDeck[randomNum]);
-    removedCards.push(cardDeck[randomNum]);
     cardDeck.splice(randomNum, 1);
     total--;
   }
@@ -89,20 +85,14 @@ for (var t = 0; t < players.length; t++) {
   }
 }
 
-console.log(players);
-
 for (var y = 0; y < players.length; y++) {
-  console.log(players[y].score);
   if (players[y].score > highScore) {
     highScore = players[y].score;
-    winner = players[y].name;
-  } else if (players[y].score === highScore) {
-    winner2 = players[y];
   }
 }
 
-if (winner2.score === highScore) {
-  console.log(`It is a tie between ${winner} and ${winner2.name}!`);
-} else {
-  console.log(`The winner is ${winner}`);
+for (var r = 0; r < players.length; r++) {
+  if (players[r].score === highScore) {
+    console.log(`The winner is ${players[r].name}!`);
+  }
 }
