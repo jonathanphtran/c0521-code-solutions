@@ -4,8 +4,8 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
 ********************************** PSEUDOCODE **********************************
 
-- create 4 objects
-- each object will have 2 properties: name and hand
+- create 4 objects in an array
+- each object will have 3 properties: name, hand, and score
   - name will be a string and hand will be an empty array
 - create an empty array
 - create a counter variable of 0
@@ -13,6 +13,9 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 - create an array holding sutis
 - create an array to hold the cards
 - create variable round2 and set it to false
+- create a score variable and assign it to be 0
+- create a max variable and assign it to 0
+- create a card index variable and set it to 0
 - using a loop fill it with 52 objects
   - each object will have a rank and suit
   - create another loop going up to 13
@@ -33,18 +36,18 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
   - push the given card to the used card array
   - remove the given card from the deck
   - set round2 back to false so you can use it again
-- once the loop finishes, push the removed cards back into the deck
-  - create a score variable and assign it to be 0
-  - create a max variable and assign it to 0
-  - loop through the number of players
-  - loop through each card
-   - if the card is a face card, increase the score by 10
-   - if the card is an ace, increase score by 11
-   - if score is a number card, increase score by the number
-  - assign the score to the player
-  - if the score is higher than the current, change the max to be the score
-  - check which player does the max score match with
-  - give back the player(s) name(s)
+- loop through the number of players * 2
+  - if round2 is true and player number is greater than half break
+  - if player number is greater than half
+    - set card index to 1
+    - set the player number back to 0
+  - if the card is a face card, increase the score by 10
+  - if the card is an ace, increase score by 11
+  - if score is a number card, increase score by the number
+- assign the score to the player
+- if the score is higher than the current, change the max to be the score
+- check which player does the max score match with
+- give back the player(s) name(s)
 
 ********************************************************************************
 
