@@ -25,9 +25,10 @@
 function titleCase(string) {
   var title = '';
   var loweredStr = string.toLowerCase();
-  // var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at',
-  //   'by', 'for', 'in', 'of', 'on', 'per', 'to'];
-  var counter = 0;
+  var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at',
+    'by', 'for', 'in', 'of', 'on', 'per', 'to'];
+  var tempStr = '';
+  var count = 1;
 
   loweredStr = loweredStr.replace('javascript', 'JavaScript');
   loweredStr = loweredStr.replace('api', 'API');
@@ -35,20 +36,29 @@ function titleCase(string) {
   title += loweredStr[0].toUpperCase();
 
   for (var i = 1; i < loweredStr.length; i++) {
-    counter++;
-    if (loweredStr[i] === ' ' && counter <= 3) {
-      for (var j = i - counter - 1; j < i; j++) {
-        // console.log(loweredStr);
-        // console.log(loweredStr[j]);
-        // console.log(' ');
+    if (loweredStr[i] === ' ') {
+      i++;
+      while (loweredStr[i] !== ' ' && i < string.length) {
+        tempStr += loweredStr[i];
+        count++;
+        i++;
       }
+      i -= count;
+      for (var j = 0; j < minorWords.length; j++) {
+        if (tempStr === minorWords[j] && string[i - 1] !== ':') {
+          title += ' ' + tempStr;
+          i += count;
+          break;
+        }
+      }
+      count = 1;
+      tempStr = '';
     }
     if (loweredStr[i] !== ' ' && loweredStr[i] !== '-') {
       title += loweredStr[i];
     } else if (loweredStr[i] === ' ') {
       title += ' ';
       title += loweredStr[i + 1].toUpperCase();
-      counter = 0;
       i++;
     } else if (loweredStr[i] === '-') {
       title += '-';
