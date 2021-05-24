@@ -29,6 +29,7 @@ function titleCase(string) {
     'by', 'for', 'in', 'of', 'on', 'per', 'to'];
   var tempStr = '';
   var count = 1;
+  // var isMinor = false;
 
   loweredStr = loweredStr.replace('javascript', 'JavaScript');
   loweredStr = loweredStr.replace('api', 'API');
@@ -46,13 +47,14 @@ function titleCase(string) {
       i -= count;
       for (var j = 0; j < minorWords.length; j++) {
         if (tempStr === minorWords[j] && string[i - 1] !== ':') {
+          // isMinor = true;
           title += ' ' + tempStr;
           i += count;
           break;
         }
       }
       count = 1;
-      tempStr = '';
+      // console.log(tempStr);
     }
     if (loweredStr[i] !== ' ' && loweredStr[i] !== '-') {
       title += loweredStr[i];
@@ -65,6 +67,8 @@ function titleCase(string) {
       title += loweredStr[i + 1].toUpperCase();
       i++;
     }
+    // isMinor = false;
+    tempStr = '';
   }
   return title;
 }
