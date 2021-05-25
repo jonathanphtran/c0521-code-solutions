@@ -88,9 +88,11 @@ for (var k = 0; k < players.length * 2; k++) {
     k = 0;
     round2 = true;
   }
-  players[k].hand.push(cardDeck[k]);
-  cardDeck.splice(k, 1);
+  players[k].hand.push(cardDeck[0]);
+  cardDeck.splice(0, 1);
 }
+
+console.log(cardDeck.length);
 
 round2 = false;
 
@@ -121,3 +123,5 @@ for (var r = 0; r < players.length; r++) {
     console.log(`The winner is ${players[r].name}!`);
   }
 }
+
+console.log(players);
