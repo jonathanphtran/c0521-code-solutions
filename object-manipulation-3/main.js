@@ -63,7 +63,6 @@ var cardDeck = [];
 var card = [];
 var suits = ['club', 'clover', 'diamond', 'heart'];
 var cards = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
-var total = 52;
 var highScore = 0;
 var round2 = false;
 var cardIdx = 0;
@@ -77,16 +76,20 @@ for (var i = 0; i < suits.length; i++) {
   }
 }
 
+for (var m = 0; m < cardDeck.length; m++) {
+  var randIdx = Math.floor(Math.random() * 52);
+  var removedVal = cardDeck.splice(0, 1);
+  cardDeck.splice(randIdx, 0, removedVal[0]);
+}
+
 for (var k = 0; k < players.length * 2; k++) {
   if (k > players.length - 1 && round2 === true) break;
   if (k > players.length - 1) {
     k = 0;
     round2 = true;
   }
-  var randomNum = Math.floor(Math.random() * total);
-  players[k].hand.push(cardDeck[randomNum]);
-  cardDeck.splice(randomNum, 1);
-  total--;
+  players[k].hand.push(cardDeck[k]);
+  cardDeck.splice(k, 1);
 }
 
 round2 = false;
