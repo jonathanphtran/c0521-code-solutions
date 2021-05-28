@@ -36,17 +36,6 @@
 
 //   if (loweredStr.length === 0) return words;
 
-//   // for (var j = 0; j < loweredStr.length; j++) {
-//   //   if (string[j] !== ' ') {
-//   //     currentWord += loweredStr[j];
-//   //   } else {
-//   //     words.push(currentWord);
-//   //     currentWord = '';
-//   //   }
-//   // }
-//   // words.push(currentWord);
-//   // console.log(words);
-
 //   for (var i = 1; i < loweredStr.length; i++) {
 
 //     if (loweredStr[i] === ':') {
@@ -64,7 +53,18 @@
 //       title += loweredStr[i + 1].toUpperCase();
 //       i++;
 //     }
-
 //   }
+
+//   for (var j = 0; j < title.length; j++) {
+//     if (title[j] !== ' ') {
+//       currentWord += title[j];
+//     } else {
+//       words.push(currentWord);
+//       currentWord = '';
+//     }
+//   }
+//   words.push(currentWord);
+//   console.log(words);
+
 //   return title;
 // }
