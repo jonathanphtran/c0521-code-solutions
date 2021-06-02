@@ -35,8 +35,3 @@ Account.prototype.getBalance = function () {
   }
   return total;
 };
-
-var newAccount = new Account(1, 'John');
-newAccount.deposit(100000);
-newAccount.withdraw(40000);
-newAccount.getBalance();

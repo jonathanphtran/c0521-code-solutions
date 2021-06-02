@@ -8,5 +8,3 @@ function Transaction(type, amount) {
     this.amount = amount;
   }
 }
-
-var newTransaction = new Transaction('deposit', 10000);
