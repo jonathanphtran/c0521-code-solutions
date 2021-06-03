@@ -33,3 +33,7 @@
   align-items: flex-end;
   padding: 2rem;
 }
+
+.hidden {
+  display: none;
+}

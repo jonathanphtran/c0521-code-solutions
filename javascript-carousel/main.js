@@ -1,36 +1,44 @@
 var $rightArrow = document.querySelector('.fa-chevron-right');
 var $leftArrow = document.querySelector('.fa-chevron-left');
-var $pokemonImg = document.querySelector('.pokemon');
 var $circles = document.querySelectorAll('.fa-circle');
-var allImages = ['001.png', '004.png', '007.png', '025.png', '039.png'];
+var $allCircles = document.querySelector('.all-circles');
+var $views = document.querySelectorAll('.view');
+var i = 0;
 var circlePosition = 0;
+var viewPosition = 0;
 
-function changeImageRight(event) {
-  var src = $pokemonImg.getAttribute('src');
-  var imageID = src.slice(7);
-  for (var i = 0; i < allImages.length; i++) {
-    if (imageID === allImages[allImages.length - 1]) {
-      var nextImageID = allImages[0];
-    } else if (imageID === allImages[i]) {
-      nextImageID = allImages[i + 1];
+function switchView(nameOfView) {
+  for (i = 0; i < $views.length; i++) {
+    if ($views[i].getAttribute('data-view') === nameOfView) {
+      $views[i].className = 'col view';
+    } else {
+      $views[i].className = 'col hidden view';
     }
   }
-  var newSrc = `images/${nextImageID}`;
-  $pokemonImg.setAttribute('src', newSrc);
+}
+
+function changeImageRight(event) {
+  if (viewPosition === $views.length - 1) {
+    $views[viewPosition].className = 'col view hidden';
+    $views[0].className = 'col view';
+    viewPosition = 0;
+  } else if ($views[viewPosition].className === 'col view') {
+    $views[viewPosition].className = 'col view hidden';
+    $views[viewPosition + 1].className = 'col view';
+    viewPosition++;
+  }
 }
 
 function changeImageLeft(event) {
-  var src = $pokemonImg.getAttribute('src');
-  var imageID = src.slice(7);
-  for (var i = allImages.length - 1; i >= 0; i--) {
-    if (imageID === allImages[0]) {
-      var nextImageID = allImages[allImages.length - 1];
-    } else if (imageID === allImages[i]) {
-      nextImageID = allImages[i - 1];
-    }
+  if (viewPosition === 0) {
+    $views[viewPosition].className = 'col view hidden';
+    viewPosition = $views.length - 1;
+    $views[viewPosition].className = 'col view';
+  } else if ($views[viewPosition].className === 'col view') {
+    $views[viewPosition].className = 'col view hidden';
+    $views[viewPosition - 1].className = 'col view';
+    viewPosition--;
   }
-  var newSrc = `images/${nextImageID}`;
-  $pokemonImg.setAttribute('src', newSrc);
 }
 
 function moveCircleRight(event) {
@@ -57,26 +65,44 @@ function moveCircleLeft(event) {
   }
 }
 
-function rightArrowClick() {
-  changeImageRight();
-  moveCircleRight();
+function chooseCircle(event) {
+  var nameOfView = event.target.getAttribute('data-view');
+  switchView(nameOfView);
+  for (i = 0; i < $circles.length; i++) {
+    $circles[i].className = 'far fa-circle';
+  }
+  event.target.className = 'fas fa-circle';
+  circlePosition = parseInt(nameOfView) - 1;
+  viewPosition = parseInt(nameOfView) - 1;
+}
+
+function continueInterval() {
   clearInterval(intervalObj.intervalId);
   clearInterval(intervalObj.intervalId2);
   intervalObj.intervalId = setInterval(changeImageRight, 3000);
   intervalObj.intervalId2 = setInterval(moveCircleRight, 3000);
+}
+
+function clickCircle() {
+  chooseCircle(event);
+  continueInterval();
+}
+
+function rightArrowClick() {
+  changeImageRight();
+  moveCircleRight();
+  continueInterval();
 }
 
 function leftArrowClick() {
   changeImageLeft();
   moveCircleLeft();
-  clearInterval(intervalObj.intervalId);
-  clearInterval(intervalObj.intervalId2);
-  intervalObj.intervalId = setInterval(changeImageRight, 3000);
-  intervalObj.intervalId2 = setInterval(moveCircleRight, 3000);
+  continueInterval();
 }
 
 $rightArrow.addEventListener('click', rightArrowClick);
 $leftArrow.addEventListener('click', leftArrowClick);
+$allCircles.addEventListener('click', clickCircle);
 
 var intervalId = setInterval(changeImageRight, 3000);
 var intervalId2 = setInterval(moveCircleRight, 3000);
