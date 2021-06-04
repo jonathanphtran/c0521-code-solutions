@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col left"><i class="fas fa-chevron-left fa-2x"></i></div>
+      <div class="col view" data-view="1"><img src="images/001.png" alt="Pokemon" class="pokemon"></div>
+      <div class="col hidden view" data-view="2"><img src="images/004.png" alt="Pokemon" class="pokemon"></div>
+      <div class="col hidden view" data-view="3"><img src="images/007.png" alt="Pokemon" class="pokemon"></div>
+      <div class="col hidden view" data-view="4"><img src="images/025.png" alt="Pokemon" class="pokemon"></div>
+      <div class="col hidden view" data-view="5"><img src="images/039.png" alt="Pokemon" class="pokemon"></div>
+      <div class="col right"><i class="fas fa-chevron-right fa-2x"></i></div>
+    </div>
+    <div class="row">
+      <div class="all-circles">
+        <i class="fas fa-circle" data-view="1"></i>
+        <i class="far fa-circle" data-view="2"></i>
+        <i class="far fa-circle" data-view="3"></i>
+        <i class="far fa-circle" data-view="4"></i>
+        <i class="far fa-circle" data-view="5"></i>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
