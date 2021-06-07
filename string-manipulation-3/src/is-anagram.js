@@ -17,6 +17,7 @@
 - set all space properties to 0
 - if any value isn't 0, give back false
 - if they are all 0, give back true
+-
 
 **************************************************************************
 

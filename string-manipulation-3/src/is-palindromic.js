@@ -13,6 +13,7 @@
 - check if the new string and the old string is the same
 - give back true if yes
 - give back false if no
+-
 
 **************************************************************************
 

@@ -17,6 +17,7 @@
 - change the increment to where you currently are
 - if you are at the last index
   - add the remaining letters
+-
 
 **************************************************************************
 
